@@ -262,7 +262,7 @@ This repository is the **Gemini CLI Extension** version.
 For Antigravity, Claude Code, or standalone skill installation, use the **Skills-only version**:
 
 ```
-[https://github.com/hajekim/agentic-design-patterns-skills](https://github.com/hajekim/agentic-design-patterns-skills)
+https://github.com/hajekim/agentic-design-patterns-skills
 ```
 
 ---
