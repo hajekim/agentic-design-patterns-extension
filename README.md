@@ -6,7 +6,7 @@
 ## Quick Install
 
 ```bash
-gemini extensions install https://github.com/hajekim/skills-agentic-design-patterns
+gemini extensions install https://github.com/hajekim/agentic-design-patterns-extension
 ```
 
 Restart Gemini CLI after installation. All 28 skills are immediately available.
@@ -15,7 +15,7 @@ Restart Gemini CLI after installation. All 28 skills are immediately available.
 
 ## What Is This?
 
-This is a **Gemini CLI Extension** — a single installable package that bundles 28 specialized agent skills based on proven agentic design patterns from [*Agentic Design Patterns*](https://github.com/hajekim/skills-agentic-design-patterns) by Antonio Gulli.
+This is a **Gemini CLI Extension** — a single installable package that bundles 28 specialized agent skills based on proven agentic design patterns from [*Agentic Design Patterns*](https://github.com/hajekim/agentic-design-patterns-extension) by Antonio Gulli.
 
 Each skill contains:
 - A structured **DEFINE → PLAN → ACTION** workflow
