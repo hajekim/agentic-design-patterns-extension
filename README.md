@@ -10,29 +10,7 @@ gemini extensions install https://github.com/hajekim/agentic-design-patterns-ext
 
 After installation, restart Gemini CLI. The 28 skills activate automatically when you describe what you want to build.
 
-## What's New in v2.2.0
-
-- **Skill-search MCP server** — `mcp_server.py` exposes three tools to Gemini CLI:
-  - `list_patterns([category])` — list all 28 patterns or filter by category (core/state/reliability/advanced/appendix)
-  - `get_skill(pattern_name)` — retrieve the full SKILL.md for any pattern
-  - `search_skills(query)` — keyword search across all 28 skill definitions
-- **Custom terminal theme** — `agentic` theme with dark background and teal/green accent colors, registered in `gemini-extension.json`
-
-## What's New in v2.1.1
-
-- **Bug fixes** — Corrected deprecated ADK class usage (`Agent` → `LlmAgent`, `InMemoryRunner` → `Runner` + `InMemorySessionService`) in `mcp-setup` and `prompt-chaining` skills.
-- **Model name corrections** — Removed non-existent `gemini-2.5-flash-thinking` from `resource-aware` and `appendix-reasoning-engines` skills; replaced with `gemini-2.5-flash` + Thinking Budget guidance.
-
-## What's New in v2.1.0
-
-- **`/pattern-summary [filter]`** — Browse all 28 patterns or filter by category/name. Leads naturally into `/gen-skeleton`.
-- **Sub-agents** — `architect` recommends the optimal pattern combination; `reviewer` checks code compliance.
-
-## What's New in v2.0.0
-
-- **Global Context** — `GEMINI.md` auto-loads at every session start, giving the model full awareness of all 28 patterns, model selection guidance, and technical conventions.
-- **`/gen-skeleton <pattern>`** — New slash command that generates a Python code skeleton for any pattern using correct SDK conventions (google-genai, LlmAgent + Runner).
-- **Model Preference Setting** — Set your preferred Gemini model (`GEMINI_MODEL`) during installation.
+> Current version: **v2.2.0** — See [CHANGELOG.md](CHANGELOG.md) for full version history.
 
 ## What This Extension Provides
 
