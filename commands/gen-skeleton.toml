@@ -1,0 +1,17 @@
+prompt = """
+Generate a Python code skeleton for the "{{args}}" agentic design pattern
+from the Agentic Design Patterns library (Antonio Gulli).
+
+Use these technical conventions without exception:
+- Gemini SDK: google-genai  (import google.genai as genai)
+- ADK: LlmAgent + Runner + InMemorySessionService  (NOT InMemoryRunner)
+- Default model: gemini-2.5-flash
+
+Structure the skeleton with these clearly labeled sections:
+1. Imports
+2. Configuration (API key from env, model name)
+3. Core pattern implementation (with inline section comments)
+4. Main execution block with a minimal working example
+
+Output Python code only — no explanatory prose outside of comments.
+"""
