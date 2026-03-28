@@ -10,6 +10,11 @@ gemini extensions install https://github.com/hajekim/agentic-design-patterns-ext
 
 After installation, restart Gemini CLI. The 28 skills activate automatically when you describe what you want to build.
 
+## What's New in v2.1.1
+
+- **Bug fixes** — Corrected deprecated ADK class usage (`Agent` → `LlmAgent`, `InMemoryRunner` → `Runner` + `InMemorySessionService`) in `mcp-setup` and `prompt-chaining` skills.
+- **Model name corrections** — Removed non-existent `gemini-2.5-flash-thinking` from `resource-aware` and `appendix-reasoning-engines` skills; replaced with `gemini-2.5-flash` + Thinking Budget guidance.
+
 ## What's New in v2.1.0
 
 - **`/pattern-summary [filter]`** — Browse all 28 patterns or filter by category/name. Leads naturally into `/gen-skeleton`.
