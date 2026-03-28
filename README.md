@@ -10,6 +10,14 @@ gemini extensions install https://github.com/hajekim/agentic-design-patterns-ext
 
 After installation, restart Gemini CLI. The 28 skills activate automatically when you describe what you want to build.
 
+## What's New in v2.2.0
+
+- **Skill-search MCP server** — `mcp_server.py` exposes three tools to Gemini CLI:
+  - `list_patterns([category])` — list all 28 patterns or filter by category (core/state/reliability/advanced/appendix)
+  - `get_skill(pattern_name)` — retrieve the full SKILL.md for any pattern
+  - `search_skills(query)` — keyword search across all 28 skill definitions
+- **Custom terminal theme** — `agentic` theme with dark background and teal/green accent colors, registered in `gemini-extension.json`
+
 ## What's New in v2.1.1
 
 - **Bug fixes** — Corrected deprecated ADK class usage (`Agent` → `LlmAgent`, `InMemoryRunner` → `Runner` + `InMemorySessionService`) in `mcp-setup` and `prompt-chaining` skills.
@@ -136,8 +144,9 @@ gemini extensions uninstall agentic-design-patterns
 
 ```
 agentic-design-patterns/
-├── gemini-extension.json     ← Extension manifest (v2.1.0)
+├── gemini-extension.json     ← Extension manifest (v2.2.0)
 ├── GEMINI.md                 ← Global context: pattern guide, model guide, tech decisions
+├── mcp_server.py             ← Skill-search MCP server (list_patterns, get_skill, search_skills)
 ├── commands/
 │   ├── gen-skeleton.toml    ← /gen-skeleton <pattern> — generate code skeleton
 │   └── pattern-summary.toml ← /pattern-summary [filter] — browse patterns

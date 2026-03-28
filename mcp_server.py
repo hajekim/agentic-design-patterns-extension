@@ -7,6 +7,8 @@ Requirements: pip install mcp
 """
 
 from pathlib import Path
+from typing import Optional
+
 from mcp.server.fastmcp import FastMCP
 
 # Skills directory is located next to this server file
@@ -43,7 +45,7 @@ def _skill_path(pattern_name: str) -> Path:
     return SKILLS_DIR / dir_name / "SKILL.md"
 
 
-def _read_skill(pattern_name: str) -> str | None:
+def _read_skill(pattern_name: str) -> Optional[str]:
     path = _skill_path(pattern_name)
     return path.read_text(encoding="utf-8") if path.exists() else None
 
@@ -60,7 +62,10 @@ def list_patterns(category: str = "") -> str:
     Returns:
         Formatted list of pattern names.
     """
-    if category and category in PATTERN_CATEGORIES:
+    if category:
+        if category not in PATTERN_CATEGORIES:
+            valid = ", ".join(f"`{c}`" for c in PATTERN_CATEGORIES)
+            return f"Unknown category '{category}'. Valid categories: {valid}."
         patterns = PATTERN_CATEGORIES[category]
         lines = [f"**{category.title()} Patterns ({len(patterns)}):**"]
         lines += [f"- `{p}`" for p in patterns]
