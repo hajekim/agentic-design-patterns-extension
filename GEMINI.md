@@ -58,7 +58,17 @@ This Extension provides 28 agentic design pattern skills based on
 
 ### Appendices
 
-`appendix-prompt-engineering` · `appendix-gui-agents` · `appendix-agentic-frameworks` · `appendix-agentspace` · `appendix-ai-cli` · `appendix-coding-agents` · `appendix-reasoning-engines`
+> Reference patterns — environment setup, tooling, and meta-level agent design. Not applied as runtime patterns.
+
+| Pattern | What It Covers |
+|---------|---------------|
+| `appendix-prompt-engineering` | Structuring prompts for reliability in agentic workflows |
+| `appendix-gui-agents` | Agents that interact with graphical user interfaces via vision or accessibility APIs |
+| `appendix-agentic-frameworks` | Comparing ADK, LangChain, LangGraph, and CrewAI for framework selection |
+| `appendix-agentspace` | Deploying and managing agents on Google AgentSpace |
+| `appendix-ai-cli` | Building AI-powered command-line interfaces |
+| `appendix-coding-agents` | Agents that write, review, and execute code autonomously |
+| `appendix-reasoning-engines` | Selecting reasoning models and configuring Thinking Budget |
 
 ---
 

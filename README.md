@@ -10,7 +10,7 @@ gemini extensions install https://github.com/hajekim/agentic-design-patterns-ext
 
 After installation, restart Gemini CLI. The 28 skills activate automatically when you describe what you want to build.
 
-> Current version: **v2.2.3** — See [CHANGELOG.md](CHANGELOG.md) for full version history.
+> Current version: **v2.2.4** — See [CHANGELOG.md](CHANGELOG.md) for full version history.
 
 ## What This Extension Provides
 
@@ -75,14 +75,78 @@ Gemini CLI reads the `name` and `description` of each skill. When your request m
 /gen-skeleton rag
 ```
 
+**`/gen-skeleton planning` example output:**
+
+```python
+from google import genai
+from google.adk.agents import LlmAgent
+from google.adk.runners import Runner
+from google.adk.sessions import InMemorySessionService
+import asyncio
+
+planner = LlmAgent(
+    name="planner",
+    model="gemini-2.5-flash",
+    instruction="""You are a planning agent. Given a complex goal, decompose it
+    into an ordered list of concrete subtasks. For each subtask specify:
+    what to do, what input it needs, and what output it produces.""",
+)
+
+async def run(goal: str) -> str:
+    session_service = InMemorySessionService()
+    await session_service.create_session(
+        app_name="planning-demo", user_id="user", session_id="s1"
+    )
+    runner = Runner(
+        agent=planner, app_name="planning-demo", session_service=session_service
+    )
+    async for event in runner.run_async(
+        user_id="user", session_id="s1",
+        new_message=genai.types.Content(
+            role="user", parts=[genai.types.Part(text=goal)]
+        ),
+    ):
+        if event.is_final_response():
+            return event.content.parts[0].text
+    return ""
+
+if __name__ == "__main__":
+    print(asyncio.run(run("Build a customer support bot for returns, billing, and tech issues")))
+```
+
 ### Sub-agents (Preview)
 
-```bash
-# Get pattern combination recommendations for your problem
-@architect "I need to build a customer support bot that learns from feedback"
+**`@architect`** — recommends an optimal pattern combination for your problem.
 
-# Review your agent code for pattern compliance
-@reviewer <paste your code>
+```
+Input:  natural-language problem description
+
+Output:
+  - Problem analysis (scope, constraints)
+  - Recommended patterns with rationale
+  - How the patterns combine in a system design
+  - Next step: /gen-skeleton <primary-pattern>
+```
+
+```bash
+@architect "I need to build a customer support bot that learns from feedback"
+```
+
+**`@reviewer`** — reviews agent code for pattern compliance and SDK conventions.
+
+```
+Input:  Python agent code (paste directly)
+
+Output:
+  - Pattern compliance checklist (12 core/state/reliability patterns)
+  - SDK convention check (LlmAgent, Runner, InMemorySessionService, google-genai)
+  - Issues found with file/line references
+  - Concrete fix recommendations
+```
+
+```bash
+@reviewer
+# then paste your code
 ```
 
 **Recommended workflow:**

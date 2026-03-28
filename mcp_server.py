@@ -36,6 +36,42 @@ PATTERN_CATEGORIES = {
 
 ALL_PATTERNS = [p for patterns in PATTERN_CATEGORIES.values() for p in patterns]
 
+PATTERN_DESCRIPTIONS = {
+    # Core
+    "prompt-chaining":           "Sequential steps where each output feeds the next",
+    "routing":                   "Dynamic selection of handler based on input type",
+    "parallelization":           "Independent tasks that can run concurrently",
+    "reflection":                "Self-evaluation and iterative improvement",
+    "tool-use":                  "Calling external APIs, databases, or functions",
+    "planning":                  "Breaking complex goals into ordered subtasks",
+    "multi-agent-collaboration": "Coordinating multiple specialized agents",
+    # State
+    "memory-management":         "Persisting context across sessions",
+    "learning-adaptation":       "Adjusting behavior based on feedback",
+    "mcp-setup":                 "Connecting to external tools via Model Context Protocol",
+    "goal-setting":              "Defining and tracking long-term agent objectives",
+    # Reliability
+    "exception-handling":        "Graceful degradation and recovery from errors",
+    "human-in-the-loop":         "Human review at critical decision points",
+    "rag":                       "Grounding responses in retrieved, up-to-date knowledge",
+    # Advanced
+    "a2a":                       "Agent-to-agent communication protocols",
+    "resource-aware":            "Optimizing for cost, latency, and token budget",
+    "reasoning":                 "Structured chain-of-thought and problem decomposition",
+    "guardrails":                "Enforcing safety, policy, and output constraints",
+    "evaluation":                "Measuring and benchmarking agent performance",
+    "prioritization":            "Ranking and scheduling tasks by urgency and impact",
+    "exploration":               "Systematic discovery in unknown or large environments",
+    # Appendix
+    "appendix-prompt-engineering":   "Structuring prompts for reliability in agentic workflows",
+    "appendix-gui-agents":           "Agents that interact with GUIs via vision or accessibility APIs",
+    "appendix-agentic-frameworks":   "Comparing ADK, LangChain, LangGraph, and CrewAI",
+    "appendix-agentspace":           "Deploying and managing agents on Google AgentSpace",
+    "appendix-ai-cli":               "Building AI-powered command-line interfaces",
+    "appendix-coding-agents":        "Agents that write, review, and execute code autonomously",
+    "appendix-reasoning-engines":    "Selecting reasoning models and configuring Thinking Budget",
+}
+
 # mcp-setup skill lives in a folder named 'mcp' (not 'mcp-setup')
 PATTERN_DIR_MAP = {"mcp-setup": "mcp"}
 
@@ -68,13 +104,17 @@ def list_patterns(category: str = "") -> str:
             return f"Unknown category '{category}'. Valid categories: {valid}."
         patterns = PATTERN_CATEGORIES[category]
         lines = [f"**{category.title()} Patterns ({len(patterns)}):**"]
-        lines += [f"- `{p}`" for p in patterns]
+        for p in patterns:
+            desc = PATTERN_DESCRIPTIONS.get(p, "")
+            lines.append(f"- `{p}` — {desc}")
         return "\n".join(lines)
 
     lines = ["**28 Agentic Design Patterns:**\n"]
     for cat, patterns in PATTERN_CATEGORIES.items():
         lines.append(f"### {cat.title()} ({len(patterns)})")
-        lines += [f"- `{p}`" for p in patterns]
+        for p in patterns:
+            desc = PATTERN_DESCRIPTIONS.get(p, "")
+            lines.append(f"- `{p}` — {desc}")
         lines.append("")
     lines.append("Tip: use `get_skill(pattern_name)` or `search_skills(query)` for details.")
     return "\n".join(lines)

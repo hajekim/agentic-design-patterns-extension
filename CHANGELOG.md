@@ -5,6 +5,20 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [2.2.4] — 2026-03-28
+
+### Fixed
+- `gemini-extension.json`: `version` field corrected from `2.2.0` to `2.2.3` to match README and CHANGELOG
+
+### Added
+- `mcp_server.py`: `PATTERN_DESCRIPTIONS` dictionary — 28 one-line descriptions covering all patterns
+- `mcp_server.py`: `list_patterns()` now includes a one-line description per pattern (e.g. `` `planning` — Breaking complex goals into ordered subtasks ``)
+- `GEMINI.md`: Appendix section expanded from a flat name list into a table with one-line description per appendix pattern; added note clarifying appendix patterns are reference/meta patterns, not runtime patterns
+- `README.md`: `/gen-skeleton planning` example output added — shows the full Python skeleton generated (LlmAgent + Runner + InMemorySessionService)
+- `README.md`: `@architect` and `@reviewer` sub-agent I/O formats documented — input prompt structure and output section breakdown
+
+---
+
 ## [2.2.3] — 2026-03-28
 
 ### Changed
