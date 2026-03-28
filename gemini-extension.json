@@ -1,14 +1,32 @@
 {
   "name": "agentic-design-patterns",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "28 agentic design pattern skills covering the full spectrum of AI agent development — from foundational patterns to advanced multi-agent systems. Supports English, Korean, Japanese, and Chinese trigger phrases.",
   "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "agentic-patterns": {
+      "command": "python3",
+      "args": ["${extensionPath}${/}mcp_server.py"],
+      "cwd": "${extensionPath}"
+    }
+  },
   "settings": [
     {
       "name": "Preferred Model",
       "description": "Gemini model to use with this extension. Recommended: gemini-2.5-flash (balanced) or gemini-2.5-pro (complex reasoning). Leave blank to use Gemini CLI default.",
       "envVar": "GEMINI_MODEL",
       "sensitive": false
+    }
+  ],
+  "themes": [
+    {
+      "name": "agentic",
+      "type": "custom",
+      "background": { "primary": "#0d1117" },
+      "text": { "primary": "#7ee8c8", "secondary": "#5a9e88", "link": "#4fc3f7" },
+      "status": { "success": "#56d364", "warning": "#e3b341", "error": "#f85149" },
+      "border": { "default": "#21262d" },
+      "ui": { "comment": "#8b949e" }
     }
   ]
 }
