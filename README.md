@@ -186,7 +186,7 @@ gemini extensions uninstall agentic-design-patterns
 
 ```
 agentic-design-patterns/
-├── gemini-extension.json     ← Extension manifest (v2.2.1)
+├── gemini-extension.json     ← Extension manifest (v2.2.4)
 ├── GEMINI.md                 ← Global context: pattern guide, model guide, tech decisions
 ├── mcp_server.py             ← Skill-search MCP server (list_patterns, get_skill, search_skills)
 ├── commands/

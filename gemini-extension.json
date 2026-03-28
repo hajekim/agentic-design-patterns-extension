@@ -6,7 +6,9 @@
   "mcpServers": {
     "agentic-patterns": {
       "command": "python3",
-      "args": ["${extensionPath}${/}mcp_server.py"],
+      "args": [
+        "${extensionPath}${/}mcp_server.py"
+      ],
       "cwd": "${extensionPath}"
     }
   },
@@ -22,11 +24,25 @@
     {
       "name": "agentic",
       "type": "custom",
-      "background": { "primary": "#22252A" },
-      "text": { "primary": "#ACB2BE", "secondary": "#8C9299", "link": "#6E8EB8" },
-      "status": { "success": "#7A9490", "warning": "#DFC184", "error": "#D17277" },
-      "border": { "default": "#333843" },
-      "ui": { "comment": "#767676" }
+      "background": {
+        "primary": "#22252A"
+      },
+      "text": {
+        "primary": "#ACB2BE",
+        "secondary": "#8C9299",
+        "link": "#6E8EB8"
+      },
+      "status": {
+        "success": "#7A9490",
+        "warning": "#DFC184",
+        "error": "#D17277"
+      },
+      "border": {
+        "default": "#333843"
+      },
+      "ui": {
+        "comment": "#767676"
+      }
     }
   ]
 }
