@@ -5,6 +5,16 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [2.2.3] — 2026-03-28
+
+### Changed
+- `agentic` theme: shifted from blue feel to asphalt dark grey
+  - `text.secondary`: `#6B9FCC` (blue) → `#8C9299` (neutral cool grey)
+  - `text.link`: `#74ADEA` (bright blue) → `#6E8EB8` (muted blue — retains link visibility)
+  - `status.success`: `#6DB5A5` (teal) → `#7A9490` (desaturated grey-teal)
+
+---
+
 ## [2.2.2] — 2026-03-28
 
 ### Changed
