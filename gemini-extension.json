@@ -1,6 +1,6 @@
 {
   "name": "agentic-design-patterns",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "28 agentic design pattern skills covering the full spectrum of AI agent development — from foundational patterns to advanced multi-agent systems. Supports English, Korean, Japanese, and Chinese trigger phrases.",
   "contextFileName": "GEMINI.md",
   "mcpServers": {
