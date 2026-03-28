@@ -10,6 +10,11 @@ gemini extensions install https://github.com/hajekim/agentic-design-patterns-ext
 
 After installation, restart Gemini CLI. The 28 skills activate automatically when you describe what you want to build.
 
+## What's New in v2.1.0
+
+- **`/pattern-summary [filter]`** — Browse all 28 patterns or filter by category/name. Leads naturally into `/gen-skeleton`.
+- **Sub-agents** — `architect` recommends the optimal pattern combination; `reviewer` checks code compliance.
+
 ## What's New in v2.0.0
 
 - **Global Context** — `GEMINI.md` auto-loads at every session start, giving the model full awareness of all 28 patterns, model selection guidance, and technical conventions.
@@ -60,6 +65,42 @@ Gemini CLI reads the `name` and `description` of each skill. When your request m
 "搭建RAG知识库问答系统"                    → RAG
 ```
 
+## Commands & Agents
+
+### Slash Commands
+
+```bash
+# Browse all 28 patterns grouped by category
+/pattern-summary
+
+# Filter by category: core / state / reliability / advanced / appendix
+/pattern-summary reliability
+
+# Look up a specific pattern
+/pattern-summary planning
+
+# Generate a Python code skeleton for a pattern
+/gen-skeleton planning
+/gen-skeleton rag
+```
+
+### Sub-agents (Preview)
+
+```bash
+# Get pattern combination recommendations for your problem
+@architect "I need to build a customer support bot that learns from feedback"
+
+# Review your agent code for pattern compliance
+@reviewer <paste your code>
+```
+
+**Recommended workflow:**
+1. `@architect` → get pattern recommendations
+2. `/gen-skeleton <pattern>` → generate code skeleton
+3. `@reviewer` → verify implementation
+
+---
+
 ## Extension Management
 
 ```bash
@@ -90,10 +131,14 @@ gemini extensions uninstall agentic-design-patterns
 
 ```
 agentic-design-patterns/
-├── gemini-extension.json     ← Extension manifest (v2.0.0)
+├── gemini-extension.json     ← Extension manifest (v2.1.0)
 ├── GEMINI.md                 ← Global context: pattern guide, model guide, tech decisions
 ├── commands/
-│   └── gen-skeleton.toml    ← /gen-skeleton <pattern> slash command
+│   ├── gen-skeleton.toml    ← /gen-skeleton <pattern> — generate code skeleton
+│   └── pattern-summary.toml ← /pattern-summary [filter] — browse patterns
+├── agents/
+│   ├── architect.md         ← Recommend optimal pattern combinations
+│   └── reviewer.md          ← Review code for pattern compliance
 └── skills/                   ← 28 skill definitions
     ├── planning/
     │   └── SKILL.md

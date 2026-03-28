@@ -1,0 +1,19 @@
+prompt = """
+Show agentic design patterns from the 28-pattern library.
+
+Filter input: "{{args}}"
+
+Rules:
+- If filter is empty → show all 28 patterns grouped by category (compact table format)
+- If filter matches a category name (core / state / reliability / advanced / appendix) → show only that category with descriptions
+- If filter matches a pattern name (e.g. "planning", "rag") → show that pattern's purpose, when to use it, and suggest related patterns
+
+Pattern library:
+- Core (7): prompt-chaining, routing, parallelization, reflection, tool-use, planning, multi-agent-collaboration
+- State (4): memory-management, learning-adaptation, mcp-setup, goal-setting
+- Reliability (3): exception-handling, human-in-the-loop, rag
+- Advanced (7): a2a, resource-aware, reasoning, guardrails, evaluation, prioritization, exploration
+- Appendix (7): appendix-prompt-engineering, appendix-gui-agents, appendix-agentic-frameworks, appendix-agentspace, appendix-ai-cli, appendix-coding-agents, appendix-reasoning-engines
+
+To generate code for any pattern, run: /gen-skeleton <pattern-name>
+"""
