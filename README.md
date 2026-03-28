@@ -84,7 +84,7 @@ gemini extensions uninstall agentic-design-patterns
 | **Antigravity** | Copy `skills/` to `.agents/skills/` | Keyword pattern matching |
 | **Claude Code** | Symlink `skills/` to `.claude/skills/` | Semantic judgment + slash commands |
 
-> For Antigravity and Claude Code, use the [Skills-only version](https://github.com/hajekim/skills-agentic-design-patterns).
+> For Antigravity and Claude Code, use the [Skills-only version](https://github.com/hajekim/agentic-design-patterns-skills).
 
 ## Extension Structure
 

@@ -57,7 +57,7 @@ This Extension provides 28 agentic design pattern skills based on
 
 ### Appendices
 
-`prompt-engineering` · `gui-agents` · `agentic-frameworks` · `agentspace` · `ai-cli` · `coding-agents` · `reasoning-engines`
+`appendix-prompt-engineering` · `appendix-gui-agents` · `appendix-agentic-frameworks` · `appendix-agentspace` · `appendix-ai-cli` · `appendix-coding-agents` · `appendix-reasoning-engines`
 
 ---
 
