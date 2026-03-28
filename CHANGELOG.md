@@ -5,6 +5,15 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [2.2.2] — 2026-03-28
+
+### Changed
+- `agentic` theme: reduced green feel by shifting two colors away from green
+  - `text.secondary`: `#6FB4C0` (teal/cyan) → `#6B9FCC` (shifted toward blue, less green component)
+  - `status.success`: `#A1C281` (muted green) → `#6DB5A5` (teal-blue, green feel reduced)
+
+---
+
 ## [2.2.1] — 2026-03-28
 
 ### Changed
