@@ -1,0 +1,9 @@
+# Local development scripts — not part of the published extension
+bump-version.py
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
