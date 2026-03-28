@@ -5,6 +5,22 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [2.2.1] — 2026-03-28
+
+### Changed
+- `agentic` theme colors updated to match the author's iTerm2 terminal profile (P3 → sRGB approximation):
+  - `background.primary`: `#0d1117` → `#22252A`
+  - `text.primary`: `#7ee8c8` → `#ACB2BE` (iTerm2 Foreground)
+  - `text.secondary`: `#5a9e88` → `#6FB4C0` (iTerm2 Ansi 6 — Cyan)
+  - `text.link`: `#4fc3f7` → `#74ADEA` (iTerm2 Ansi 4 — Blue)
+  - `status.success`: `#56d364` → `#A1C281` (iTerm2 Ansi 2 — Green)
+  - `status.warning`: `#e3b341` → `#DFC184` (iTerm2 Ansi 3 — Yellow)
+  - `status.error`: `#f85149` → `#D17277` (iTerm2 Ansi 1 — Red)
+  - `border.default`: `#21262d` → `#333843` (iTerm2 Selection Color)
+  - `ui.comment`: `#8b949e` → `#767676` (iTerm2 Ansi 8 — Bright Black)
+
+---
+
 ## [2.2.0] — 2026-03-28
 
 ### Added

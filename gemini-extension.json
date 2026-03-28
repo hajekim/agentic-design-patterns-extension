@@ -22,11 +22,11 @@
     {
       "name": "agentic",
       "type": "custom",
-      "background": { "primary": "#0d1117" },
-      "text": { "primary": "#7ee8c8", "secondary": "#5a9e88", "link": "#4fc3f7" },
-      "status": { "success": "#56d364", "warning": "#e3b341", "error": "#f85149" },
-      "border": { "default": "#21262d" },
-      "ui": { "comment": "#8b949e" }
+      "background": { "primary": "#22252A" },
+      "text": { "primary": "#ACB2BE", "secondary": "#6FB4C0", "link": "#74ADEA" },
+      "status": { "success": "#A1C281", "warning": "#DFC184", "error": "#D17277" },
+      "border": { "default": "#333843" },
+      "ui": { "comment": "#767676" }
     }
   ]
 }
