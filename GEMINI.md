@@ -7,7 +7,8 @@ This Extension provides 28 agentic design pattern skills based on
 
 - **Skills** activate automatically when you describe a relevant task.
   You do not need to invoke them explicitly.
-- **`/gen-skeleton <pattern>`** generates a Python code skeleton for any pattern.
+- **`/pattern-summary [filter]`** lists all 28 patterns or filters by category/name. Example: `/pattern-summary reliability`
+- **`/gen-skeleton <pattern>`** generates a Python code skeleton for any pattern. Example: `/gen-skeleton planning`
 - This context file is loaded at the start of every session.
 
 ---

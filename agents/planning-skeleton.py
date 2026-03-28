@@ -249,7 +249,7 @@ if __name__ == "__main__":
     # Define a complex goal to demonstrate the planning pattern
     example_goal = (
         "Research the top 3 programming languages for AI development in 2025, "
-        "summarise their key strengths, and recommend the best one for a beginner."
+        "summarize their key strengths, and recommend the best one for a beginner."
     )
 
     # Run the full planning loop

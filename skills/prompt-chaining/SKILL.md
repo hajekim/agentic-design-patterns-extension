@@ -216,23 +216,23 @@ print(result)
 
 ### Using Google ADK Pipeline
 ```python
-from google.adk.agents import Agent, SequentialAgent
+from google.adk.agents import LlmAgent, SequentialAgent
 from google.adk.tools import FunctionTool
 
 # Define individual step agents
-summarizer = Agent(
+summarizer = LlmAgent(
     name="summarizer",
     model="gemini-2.5-flash",
     instruction="You are a Market Analyst. Summarize the key findings from the provided text."
 )
 
-trend_extractor = Agent(
+trend_extractor = LlmAgent(
     name="trend_extractor",
     model="gemini-2.5-flash",
     instruction="You are a Trade Analyst. Extract the top 3 trends with supporting data as JSON."
 )
 
-report_writer = Agent(
+report_writer = LlmAgent(
     name="report_writer",
     model="gemini-2.5-flash",
     instruction="You are an Expert Documentation Writer. Draft a concise email from the trend analysis."

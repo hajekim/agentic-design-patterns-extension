@@ -216,9 +216,13 @@ if __name__ == "__main__":
 ### Connecting an ADK Agent to MCP Server
 ```python
 import asyncio
-from google.adk.agents import Agent
+from google.adk.agents import LlmAgent
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StdioServerParameters
-from google.adk.runners import InMemoryRunner
+from google.adk.runners import Runner
+from google.adk.sessions import InMemorySessionService
+from google.genai import types
+
+session_service = InMemorySessionService()
 
 async def create_mcp_agent():
     """Create an ADK agent that uses tools from an MCP server."""
@@ -232,7 +236,7 @@ async def create_mcp_agent():
     )
 
     # Create agent with MCP tools
-    agent = Agent(
+    agent = LlmAgent(
         name="MCPResearchAgent",
         model="gemini-2.5-flash",
         instruction="""You are a research assistant with access to web search,
@@ -252,12 +256,17 @@ async def create_mcp_agent():
 
 async def main():
     agent = await create_mcp_agent()
-    runner = InMemoryRunner(agent)
+    runner = Runner(agent=agent, app_name="mcp_agent", session_service=session_service)
+    await session_service.create_session(app_name="mcp_agent", user_id="user", session_id="session")
 
-    result = await runner.run_async(
-        "Research the latest advances in AI agents and calculate the year-over-year growth rate"
-    )
-    print(result)
+    content = types.Content(role="user", parts=[types.Part(
+        text="Research the latest advances in AI agents and calculate the year-over-year growth rate"
+    )])
+    async for event in runner.run_async(user_id="user", session_id="session", new_message=content):
+        if event.is_final_response() and event.content:
+            for part in event.content.parts:
+                if part.text:
+                    print(part.text)
 
 asyncio.run(main())
 ```
@@ -265,7 +274,7 @@ asyncio.run(main())
 ### Multi-Server MCP Integration
 ```python
 import asyncio
-from google.adk.agents import Agent
+from google.adk.agents import LlmAgent
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StdioServerParameters
 
 async def create_multi_mcp_agent():
@@ -296,7 +305,7 @@ async def create_multi_mcp_agent():
     )
 
     # Agent with access to all three tool servers
-    agent = Agent(
+    agent = LlmAgent(
         name="EnterpriseAgent",
         model="gemini-2.5-flash",
         instruction="""You are an enterprise AI assistant with access to:
