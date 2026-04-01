@@ -5,6 +5,13 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [2.2.5] — 2026-04-01
+
+### Fixed
+- `skills/*/SKILL.md`: converted `description` frontmatter field from unquoted inline string to YAML block scalar (`>-`) in all 28 skill files — unquoted values containing `": "` (colon + space, e.g. `"Also responds to Korean: "`) caused `mapping values are not allowed in this context` parse errors on GitHub
+
+---
+
 ## [2.2.4] — 2026-03-28
 
 ### Fixed

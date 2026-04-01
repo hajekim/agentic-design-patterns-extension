@@ -10,7 +10,7 @@ gemini extensions install https://github.com/hajekim/agentic-design-patterns-ext
 
 After installation, restart Gemini CLI. The 28 skills activate automatically when you describe what you want to build.
 
-> Current version: **v2.2.4** — See [CHANGELOG.md](CHANGELOG.md) for full version history.
+> Current version: **v2.2.5** — See [CHANGELOG.md](CHANGELOG.md) for full version history.
 
 ## What This Extension Provides
 
